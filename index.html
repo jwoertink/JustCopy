@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JustCopy</title>
+  </head>
+  <body>
+    <div id="text_to_copy">
+      Going to copy the text in here!
+    </div>
+    <button>Copy!</button>
+    <p>Feel free to paste what you just copied into this textarea.</p>
+    <textarea name="paste" rows="8" cols="40"></textarea>
+    
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.justcopy.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      $(function() {
+        $('button').click(function() {
+          $('#text_to_copy').justcopy({
+            flashPath: 'flash/clipboard.swf',
+            complete: function() {
+              alert('Copied');
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
